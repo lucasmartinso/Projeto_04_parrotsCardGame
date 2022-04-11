@@ -22,7 +22,7 @@ body {
     font-size: 56px; 
     color: rgba(117, 183, 158, 1);
     font-weight: bold; 
-    margin-bottom: 47px; 
+    margin-bottom: 0px; 
 }   
 
 .titulo-mobile { 
@@ -60,13 +60,30 @@ body {
     position: relative;
 }   
 
-
+.carta:hover { 
+    cursor: pointer;
+}  
 
 .frente { 
     width: 100px;
     height: 110px; 
     object-fit: cover;  
     background-image: url("imagens/passaro.png");  
+    background-size: 100px; 
+    background-repeat: no-repeat; 
+    background-position: 25% 40%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    backface-visibility: hidden; 
+    position: absolute; 
+    transform-style: preserve-3d;
+}  
+
+.verso { 
+    width: 100px;
+    height: 110px; 
+    object-fit: cover;    
     background-size: 100px; 
     background-repeat: no-repeat;
     display: flex; 
@@ -75,43 +92,49 @@ body {
     backface-visibility: hidden; 
     position: absolute; 
     transform-style: preserve-3d;
-}   
+} 
 
-.carta:hover { 
-    cursor: pointer;
-}  
+.verso img { 
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover;
+}
 
-.verso {
+.frente-verso {
     transform: rotateY(180deg);
   }
 
-  .carta .versoEscolhido {
+  .versoEscolhido {
     transform: rotateY(0deg);
   }
 
-  .carta .frenteEscolhida {
+  .frenteEscolhida {
     transform: rotateY(-180deg);
   } 
 
-  .par { 
+  .parVerso { 
       transform: rotateY(0deg);
   } 
 
-  .naoPar { 
+  .parFrente { 
       transform: rotateY(-180deg);
+  } 
+
+  .relogio { 
+      width: 130px; 
+      height: 50px;  
+      display: flex;  
+      justify-content: center; 
+      align-items: center; 
+      margin-bottom: 30px;  
+      margin-left: 1100px;
+      border-radius: 8px;
+      background-color: white; 
+      border: 2px solid black; 
+      font-weight: bold; 
+      font-size: 16px;
   }
-
-.escondido { 
-    display: none;
-}
-
-.escondido2 { 
-    display: none;
-}
  
-
-
-
 
 /* MOBILE */
 @media (max-width: 614px) {  
@@ -140,5 +163,9 @@ body {
 
     .jogo > ul { 
         display: block;
+    } 
+
+    .relogio { 
+        margin-left: 0px;
     }
 }
